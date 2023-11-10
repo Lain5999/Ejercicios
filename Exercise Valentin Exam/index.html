@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon/lain3.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script type="text/javascript" src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+<div id="productos">
+<span>Miguel de Cervantes</span><span>El Quijote</span> <span>22€</span><button onclick="add('El Quijote',1,22)">añadir</button>
+<hr>
+<span>Pantalones vaqueros</span><span>Levis</span> <span>62€</span><button onclick="add('Pantalones Vaqueros',3,62)">añadir</button>
+<hr>
+<span>Fabada</span><span>Litoral</span> <span>2,50€</span><button onclick="add('Fabada',2,2.50)">añadir</button>
+<hr>
+<span>J.R. Tolkien</span><span>El señor de los anillos</span> <span>18€</span><button onclick="add('El señor de los anillos',1,18)">añadir</button>
+<hr>
+<span>Vestido</span><span>Desigual</span> <span>48€</span><button onclick="add('vestidos',3,48)">añadir</button>
+<hr>
+<span>Fruta envasada</span><span>1 kg peras</span> <span>2,22€</span><button onclick="add('Fruta envasada',2,2.22)">añadir</button>
+<hr>
+<button onclick="calcular()">Calcular total</button>
+</div>
+<div id="cesta">
+<h2>Mi cesta</h2>
+<span>Producto</span><span>Precio sin IVA</span> <span>Tipo IVA</span> <span>IVA</span> <span>Importe</span>
+<hr>
+<div id="row"></div>
+</div>
+
+
+
+    </div>
+  
+</body>
+</html>

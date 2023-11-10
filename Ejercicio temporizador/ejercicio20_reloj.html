@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizador</title>
+    <style type="text/css">
+        div{
+            border:5px solid #000;
+            margin:0 auto;
+            width:630px;
+            padding:5px;
+            font-size:9em;
+            font-weight:bold;
+            color:red;
+            text-align:center;
+        }
+        span{
+            color:black
+        }
+    </style>
+    <script type="text/javascript">
+        /*Ponemos en hora el reloj*/
+        var thora=0;
+        var tminuto=58;
+        var tsegundo=50;
+
+        /*Definimos la hora de la alarma*/
+        var ahora=1;
+        var aminuto=0;
+        var asegundo=15;
+
+        window.onload=function(){
+            /*Al cargarse la página llamamos a la función contador*/
+            contador() 
+        }
+        
+        function contador(){
+            if (tsegundo < 59) {
+      tsegundo++;
+    } else if (tsegundo == 59) {
+      tsegundo = 0;
+      tminuto++;
+    } else if (tminuto < 59) {
+      tminutos++;
+    } else if (tminuto == 59) {
+      tminuto = 0;
+      thora++;
+    }
+           
+            /*Usamamos la propiedad innerHTML para escribir la nueva hora, minuto y segundo*/
+            segundo.innerHTML=tsegundo; 
+            minuto.innerHTML=tminuto;
+            hora.innerHTML=thora;
+
+            /*Utilizamos setTimeout para volver a llamar a la misma función transcurrido un segundo*/
+            miIntervalo=setTimeout (contador,1000);
+
+            /*comprobamos si la hora actual coincide con la de la alarma*/
+           if (thora==ahora&&tminuto==aminuto&&tsegundo==asegundo){
+            reloj.innerHTML="BOOOM"; /*Escribimos el mensaje de alarma*/
+            clearTimeout(miIntervalo); /*Limpiamos el intervalo para que no llame de nuevo a la función transcurrido el segundo*/
+           } 
+        }
+        </script>
+</head>
+<body>
+    <div id="reloj"><span id="hora"></span> : <span id="minuto"></span> : <span id="segundo"></span></div>
+</body>
+</html>

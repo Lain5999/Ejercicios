@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="POST">
+<input type="number" value="" max="10" min="0" name="nota">
+<input type="button" value="Comprobar" onclick="calculoEdad();">
+
+    </form>
+   <script type="text/javascript">
+
+    function calculoEdad(){
+edad=document.forms[0].nota.value
+if(edad<5){
+    alert("Suspenso");
+}else if(edad<7){
+    alert("Suficiente");
+}else if(edad<9){
+    alert("Notable");
+}else{
+    alert("Sobresaliente");
+}
+    }
+
+
+    </script>
+    
+</body>
+</html>

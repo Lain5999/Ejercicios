@@ -1,0 +1,31 @@
+.container{
+   display: flex;
+   padding: 30px;
+}
+
+hr{
+   border: 1px solid black !important;
+}
+ span{
+   padding: 20px;
+   text-align: center;
+}
+ button{
+float: right;
+}
+
+#cesta h2{
+   flex: 50%;
+   text-align: center;
+  
+   
+}
+
+ #productos {
+   flex: 50%;
+   margin-right: 100px;
+   
+  
+ }
+ 
+ 
