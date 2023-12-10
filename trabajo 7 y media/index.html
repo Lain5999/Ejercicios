@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Juego de 7 y Medio</title>
+    <style>
+        /* Agrega tus estilos CSS aquí */
+    </style>
+</head>
+<body>
+    <h1>Juego de 7 y Medio</h1>
+    
+    <div id="jugador1">
+        <h2>Jugador 1</h2>
+        <p>Puntuación: <span id="puntuacion1">0</span></p>
+        <p>Partidas ganadas: <span id="partidasGanadas1">0</span></p>
+        <button onclick="pedirCarta(1)">Pedir</button>
+        <button onclick="plantarse(1)">Plantarse</button>
+        <img id="cartaJugador1" src="" alt="Carta Jugador 1">
+    </div>
+    
+    <div id="jugador2">
+        <h2>Jugador 2</h2>
+        <p>Puntuación: <span id="puntuacion2">0</span></p>
+        <p>Partidas ganadas: <span id="partidasGanadas2">0</span></p>
+        <button onclick="pedirCarta(2)">Pedir</button>
+        <button onclick="plantarse(2)">Plantarse</button>
+        <img id="cartaJugador2" src="" alt="Carta Jugador 2">
+    </div>
+    
+    <script>
+        // Código JavaScript aquí
+        var partidasGanadas1 = 0;
+        var partidasGanadas2 = 0;
+        
+        // Función para manejar una carta pedida por un jugador
+        function pedirCarta(jugador) {
+            var elementoPuntuacion = document.getElementById("puntuacion" + jugador);
+            var puntuacion = parseInt(elementoPuntuacion.innerHTML);
+            
+            // Generar un valor de carta aleatorio entre 1 y 7.5
+            var valorCarta = Math.floor(Math.random() * 7) + 1;
+            
+            // Actualizar la puntuación
+            puntuacion += valorCarta;
+            elementoPuntuacion.innerHTML = puntuacion;
+            
+            // Comprobar si la puntuación del jugador supera 7.5
+            if (puntuacion > 7.5) {
+                // El jugador se pasa, mostrar un mensaje
+                alert("¡El jugador " + jugador + " se pasa!");
+                if (jugador === 1) {
+                    partidasGanadas2++;
+                    document.getElementById("partidasGanadas2").innerHTML = partidasGanadas2;
+                } else {
+                    partidasGanadas1++;
+                    document.getElementById("partidasGanadas1").innerHTML = partidasGanadas1;
+                }
+                reiniciarPuntuacion();
+            } else {
+                // Mostrar la imagen de la carta
+                var cartaJugador = document.getElementById("cartaJugador" + jugador);
+                cartaJugador.src = "URL_IMAGEN_CARTA";
+            }
+        }
+        
+        // Función para manejar una plantada por un jugador
+        function plantarse(jugador) {
+            var elementoPuntuacion = document.getElementById("puntuacion" + jugador);
+            var puntuacion = parseInt(elementoPuntuacion.innerHTML);
+            
+            // Comprobar si la puntuación del jugador es exactamente 7.5
+            if (puntuacion === 7.5) {
+                // El jugador gana, mostrar un mensaje
+                alert("¡El jugador " + jugador + " gana!");
+                if (jugador === 1) {
+                    partidasGanadas1++;
+                    document.getElementById("partidasGanadas1").innerHTML = partidasGanadas1;
+                } else {
+                    partidasGanadas2++;
+                    document.getElementById("partidasGanadas2").innerHTML = partidasGanadas2;
+                }
+                reiniciarPuntuacion();
+            } else {
+                // La puntuación del jugador es menor que 7.5, mostrar un mensaje
+                alert("El jugador " + jugador + " se planta con una puntuación de " + puntuacion);
+                reiniciarPuntuacion();
+            }
+        }
+        
+        // Función para reiniciar la puntuación de ambos jugadores
+        function reiniciarPuntuacion() {
+            document.getElementById("puntuacion1").innerHTML = "0";
+            document.getElementById("puntuacion2").innerHTML = "0";
+            document.getElementById("cartaJugador1").src = "";
+            document.getElementById("cartaJugador2").src = "";
+        }
+    </script>
+</body>
+</html>
