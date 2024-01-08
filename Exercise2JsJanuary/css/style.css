@@ -1,0 +1,7 @@
+body {
+    background-color: white;
+}
+
+body.night {
+    background-color: black;
+}
