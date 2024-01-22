@@ -1,0 +1,15 @@
+p{cursor:pointer;}
+
+#menu{
+  position:absolute;
+  top:500px;
+  left:500px;
+  display:none;
+  background-color: gray;
+  width: 150px;border:1px solid #000;
+}
+#menu p{
+border: border-bottom 1px solid #fff;
+color:#fff;
+padding:5px;
+}

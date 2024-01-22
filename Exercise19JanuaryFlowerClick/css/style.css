@@ -1,0 +1,13 @@
+#prado{
+  position:absolute;
+  top:100px;
+  left:100px;
+  width: 600px;
+  height: 300px;
+  background-color: lime;
+}
+span{
+  position:absolute;
+  width:15px;
+  height:15px;
+}
