@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Formulario de ejemplo</title>
+</head>
+<body>
+<form novalidate>
+  <label for="name">Nombre</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="correo">Correo Electrónico</label>
+  <input type="email" id="correo" name="correo" required>
+
+  <label for="telefono">Teléfono</label>
+  <input type="tel" id="telefono" name="telefono" pattern="[6][0-9]{8}" title="El teléfono debe comenzar con 6 y tener 9 dígitos en total">
+
+  <label for="paises">Países</label>
+  <select name="paises" id="paises">
+    <option value="0">Seleccione un país</option>
+    <option value="1">España</option>
+    <option value="2">Portugal</option>
+    <option value="3">Andorra</option>
+  </select>
+
+  <input type="checkbox" id="socio" name="socio">
+  <label for="socio">Socio</label>
+
+  <input type="submit" value="Enviar">
+</form>
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
